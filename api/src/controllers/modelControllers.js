@@ -22,8 +22,21 @@ const createOne = (img, model, year, price, fullmodel, description, slogan, cate
   });
 };
 
+const getOne = (id) => {
+  return new Promise((resolve, reject) => {
+    Models.findOne({
+      where: { id },
+    })
+      .then((model) => {
+        resolve(model);
+      })
+      .catch((err) => reject(err));
+  });
+};
+
 
 module.exports = {
   createOne,
-  getAll
+  getAll,
+  getOne
 };

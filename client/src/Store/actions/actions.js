@@ -1,34 +1,24 @@
 import Axios from 'axios';
+import {GET_OTHER, GET_MODELS, GET_OTHER2 }from '../constants/constants';
+import { getAllOthers } from '../services';
 
 
-export async function getAllModels(){
+async function getAllModels(){
     return dispatch => {
-        Axios.get(`${process.env.REACT_APP_API}/models`)
+        return Axios.get(`${process.env.REACT_APP_API}/models`)
             .then(res => res.data)
             .then(res => {
-                console.log('hola')
-            dispatch({type: "GET_MODELS", payload: res.data})
+            dispatch({type: GET_MODELS, payload: res.data})
         })
         
     }
 }
 
-// const getAllModels = () => async (dispatch) => {
-//     const data = await getAll()
-//     console.log(data)
-//      dispatch({type:"GET_MODELS" , payload:data})
-// }
+const getAllOther = (carId, id) => async (dispatch) => {
+        const { data } = await Axios.get(`${process.env.REACT_APP_API}/otherdetails/` + carId + '/' + id);
+    id === 1 ? (dispatch({ type: GET_OTHER, payload: data })) : (dispatch({ type: GET_OTHER2, payload: data }) )   
+               
+}
 
-// export { getAllModels };
+export { getAllModels, getAllOther };
 
-// export function getModels(){ //{vehicleId, orderBy, orderDirection}
-//     let uriParams = queryString.stringify(data); // se combierte el objeto un string url.
-//     console.log(uriParams)
-//     return dispatch => {
-//         Axios.get(API_URI + '?' + uriParams)
-//         .then(res => res.data)
-//         .then(res => {
-//             dispatch({type:GET_MODELS,payload:res.data});
-//         })
-//     }
-// }

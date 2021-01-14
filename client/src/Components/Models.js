@@ -3,26 +3,19 @@ import ModelCard from './ModelCard';
 import { Row } from 'react-bootstrap';
 // import { useSelector, useDispatch } from "react-redux";
 // import { getAllModels } from '../Store/actions/actions';
-import getAll from '../Store/services';
+import {getAll} from '../Store/services';
 
 
 
 function Models() {
-    
-    // const allModels = useSelector((state) => state.allModels);
-    // const { models } = allModels;
 
     const [models, setModels] = useState([])
 
     async function getAllModels(){
-        const data = await getAll()
-        console.log(data)
+    const data = await getAll()
     setModels(data)
     
 }
-    
-    console.log(models)
-
     useEffect(() => {
         getAllModels();
     },[]);

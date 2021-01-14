@@ -1,11 +1,24 @@
-import React from 'react'
+import { useParams } from 'react-router-dom';
+import React from 'react';
+import {Container, Row, Col} from 'react-bootstrap';
+import Model from '../Components/Model';
+import Carousel2 from '../Components/Carousel';
+import OtherDetails from '../Components/OtherDetails';
 
-function ModelDetail() {
+//Code..
+function ModelDetail(){
+    const { id } = useParams();
+    
+
     return (
-        <div>
-            
-        </div>
+        <React.Fragment>
+            <Container>
+                <Model id={id} />
+            </Container>
+            <Carousel2 id={id} />
+            <OtherDetails id={id} />
+        </React.Fragment>
     )
 }
 
-export default ModelDetail
+export default ModelDetail;

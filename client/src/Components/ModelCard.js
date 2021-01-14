@@ -4,9 +4,8 @@ import React from 'react';
 import {Col, Card} from 'react-bootstrap';
 
 export default function ModelCard({ data }) {
-    console.log(data)
 
-   const { id, model, img, fullmodel, year, price, slogan } = data;
+    const { id, model, img, year, price } = data;
     
 
     return (

@@ -3,6 +3,7 @@ const router = require("express").Router();
 const {
   createOne,
   getAll,
+  getOne
   
 } = require("../controllers/modelControllers");
 
@@ -21,6 +22,14 @@ router
 
   })
 
-
+  router
+    .route("/:id")
+    .get((req, res) => {
+    const { id } = req.params;
+    getOne(id)
+      .then((model) => res.json(model).status(200))
+      .catch((err) => res.status(404).json(err))
+ 
+  })
 
   module.exports = router;
