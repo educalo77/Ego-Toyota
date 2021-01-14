@@ -1,0 +1,1 @@
+export const GET_MODELS = "GET_MODELS";
