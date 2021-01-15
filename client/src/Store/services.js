@@ -44,4 +44,16 @@ async function getAllOthers(id) {
     });
 }
 
-export { getAll, getOne, getAllDetails, getAllOthers };
+async function getAllCategory(category) {
+  return axios
+    .post(`${process.env.REACT_APP_API}/models/`+ category)
+    .then((response) => {
+      return response.data;
+    })
+    .catch(() => {
+      return undefined;
+    });
+}
+
+
+export { getAll, getOne, getAllDetails, getAllOthers, getAllCategory };

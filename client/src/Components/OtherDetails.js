@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import {Row,Col} from 'react-bootstrap';
+import React, { useEffect, useMemo } from 'react';
+import {Col} from 'react-bootstrap';
 import s from '../Styles/mainDetail.module.scss';
 import { getAllOther } from '../Store/actions/actions';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,14 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function OtherDetails(id) {
     
-    const carId = parseInt(id.id)
     const dispatch = useDispatch();
-
-    const [width,setWidth] = useState(window.innerWidth)
-
-    const handleResize = () => {
-        setWidth(window.innerWidth);
-    }
 
     const detalles1 = useSelector((state) => state.allModels.details1);
     const detalles2 = useSelector((state) => state.allModels.details2);
@@ -24,21 +17,16 @@ function OtherDetails(id) {
 
   useEffect(()=>{
     (async function(){
-        dispatch(await getAllOther(carId, 1))
+        dispatch(await getAllOther(1, 1))
     })()
-
   }, [])
     
      useEffect(()=>{
     (async function(){
-        dispatch(await getAllOther(carId, 2))
+        dispatch(await getAllOther(1, 2))
     })()
-
   }, [])
     
-    console.log(memoizedValue)
-
-    const imageLeft = "";
 
     return (
         <div className={s['container']}>

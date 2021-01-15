@@ -1,21 +1,23 @@
-import React, {useEffect, useState} from 'react';
-import { connect } from 'react-redux';
-import {Redirect} from 'react-router-dom';
-import {getOne} from '../Store/services';
+import React, {useEffect, useMemo} from 'react';
+import {Redirect, useParams} from 'react-router-dom';
 import {Row,Col} from 'react-bootstrap';
 import s from '../Styles/model.module.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import { getOneModel } from '../Store/actions/actions';
 
-function Model({id}){
+function Model() {
+    
+    const id = useParams();
+    const dispatch = useDispatch();
 
-    const [model, setModel] = useState([])
+    const detalles1 = useSelector((state) => state.allModels.model);
 
-    async function getModel(id){
-        const data = await getOne(id)
-        setModel(data)
-}
+    const model = useMemo(() => detalles1);
+
     useEffect(() => {
-        getModel(id);
-    },[id]);
+        dispatch(getOneModel(parseInt(id.id)));
+    },[]);
+
 
     return (
         <Row>

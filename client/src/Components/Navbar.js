@@ -20,7 +20,7 @@ function Navbar(){
         <React.Fragment>
             <nav className={s['navbar-ego'] + ' sticky-top bg-white'}>
                 <Link to="/models/" className={s['navbar-ego-brand']}>
-                <img src="/ego/img/logo.png" alt="Ego - logo" />
+                <img src="/models/img/logo.png" alt="Ego - logo" />
                 </Link>
                 <Container className="mt-auto">
                     <ul>
@@ -30,7 +30,7 @@ function Navbar(){
                 </Container>
                 <Link to="/" onClick={handleMenu} className={s['btn-menu']}>
                     <span>Menú</span>
-                <img src="/ego/img/gray.svg" alt="Menú - Icono" />
+                <img src="/models/img/gray.svg" alt="Menú - Icono" />
                 </Link>
             </nav>
             {<Menu handleToggle={handleMenu} show={state.menuToggled} />}
@@ -46,7 +46,7 @@ function Menu({show, handleToggle}){
                 <li>
                     <a href="/" onClick={handleToggle}>
                         Cerrar
-                        <img src="/ego/img/fill-1.png" alt="Close menu" />
+                        <img src="/models/img/fill-1.png" alt="Close menu" />
                     </a>
                 </li>
             </ul>

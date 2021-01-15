@@ -1,14 +1,21 @@
 import { useParams } from 'react-router-dom';
-import React from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
+import React, {useEffect, use} from 'react';
+import {Container} from 'react-bootstrap';
 import Model from '../Components/Model';
 import Carousel2 from '../Components/Carousel';
 import OtherDetails from '../Components/OtherDetails';
+import { useSelector, useDispatch } from "react-redux";
+import { getAllModels } from '../Store/actions/actions';
 
-//Code..
 function ModelDetail(){
     const { id } = useParams();
     
+    const dispatch = useDispatch();
+
+ 
+    useEffect(() => {
+    dispatch(getAllModels())
+    }, []);
 
     return (
         <React.Fragment>

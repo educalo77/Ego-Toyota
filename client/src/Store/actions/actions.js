@@ -1,24 +1,42 @@
 import Axios from 'axios';
-import {GET_OTHER, GET_MODELS, GET_OTHER2 }from '../constants/constants';
-import { getAllOthers } from '../services';
+import {GET_OTHER, GET_MODELS, GET_OTHER2, GET_ORDER, GET_ONE_MODEL }from '../constants/constants';
 
 
-async function getAllModels(){
-    return dispatch => {
-        return Axios.get(`${process.env.REACT_APP_API}/models`)
-            .then(res => res.data)
-            .then(res => {
-            dispatch({type: GET_MODELS, payload: res.data})
-        })
-        
-    }
+const getAllModels = () => async (dispatch) => {
+    const { data } = await Axios.get(`${process.env.REACT_APP_API}/models`);
+    dispatch({type: GET_MODELS, payload: data})
 }
 
 const getAllOther = (carId, id) => async (dispatch) => {
         const { data } = await Axios.get(`${process.env.REACT_APP_API}/otherdetails/` + carId + '/' + id);
     id === 1 ? (dispatch({ type: GET_OTHER, payload: data })) : (dispatch({ type: GET_OTHER2, payload: data }) )   
-               
 }
 
-export { getAllModels, getAllOther };
+const getOneModel = (id) => async (dispatch) => {
+    const { data } = await Axios.get(`${process.env.REACT_APP_API}/models/`+ id);
+    dispatch({type: GET_ONE_MODEL, payload: data})
+}
+
+const getAllAutos = () => async (dispatch) => {
+    const { data } = await Axios.post(`${process.env.REACT_APP_API}/models/Autos`);
+    dispatch({type: GET_MODELS, payload: data})
+}
+
+const getAllPickups = () => async (dispatch) => {
+    const { data } = await Axios.post(`${process.env.REACT_APP_API}/models/Pickups y Comerciales`);
+    dispatch({type: GET_MODELS, payload: data})
+}
+
+const getAllSuvs = () => async (dispatch) => {
+    const { data } = await Axios.post(`${process.env.REACT_APP_API}/models/SUVs y Crossovers`);
+    dispatch({type: GET_MODELS, payload: data})
+}
+
+const getOrder = (a,b) => (dispatch) => {
+    const data = { a, b }
+    dispatch({type: GET_ORDER, payload: data})
+}
+
+
+export { getAllModels, getAllOther, getOneModel, getAllAutos, getAllPickups, getAllSuvs, getOrder };
 

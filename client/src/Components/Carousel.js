@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Row,Col, Container, Card, Button} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 import s from '../Styles/detailsCarousel.module.scss';
 import Carousel, { consts } from 'react-elastic-carousel';
 import { getAllDetails } from '../Store/services';
@@ -37,7 +37,7 @@ function Carousel2(id) {
                                 {details.map((item, index) => (  
                                     <Card key={index} className={s['card-carousel'] + ' border-0 bg-transparent'}>
                                         <Card.Body>
-                                            <img className="img-fluid" key={item.id} src={item.img} />
+                                            <img className="img-fluid" key={item.id} src={item.img} alt=""/>
                                             <h5 className={s['card-title']}>{item.description}</h5>
                                             <p>{item.detail}</p>
                                         </Card.Body>
@@ -77,7 +77,7 @@ function CustomPagination() {
 }
 
 function myArrow({ type, onClick, isEdge }) {
-    const pointer = type === consts.PREV ? (<img className="arrow-img" src="/ego/img/arrow-left.svg" />) : (<img className="arrow-img" src="/ego/img/arrow-right.svg" />)
+    const pointer = type === consts.PREV ? (<img className="arrow-img" src="/ego/img/arrow-left.svg" alt=""/>) : (<img className="arrow-img" src="/ego/img/arrow-right.svg" alt=""/>)
     return (
         <div className={s['arrow-container']} onClick={onClick} disabled={isEdge}>
             {pointer}
