@@ -1,20 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import s from '../Styles/home.module.scss';
 import Filters from '../Components/Filters';
 import Models from '../Components/Models';
-import { useDispatch } from "react-redux";
-import { getAllModels } from '../Store/actions/actions';
+
 
 function Home() {
-
-    // const dispatch = useDispatch();
-  
-    // useEffect(() => {
-    // dispatch(getAllModels())
-    // }, []);
-    
-
     
     return (
         <Container>

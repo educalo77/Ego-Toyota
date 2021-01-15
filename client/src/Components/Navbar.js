@@ -16,6 +16,7 @@ function Navbar(){
             menuToggled: !state.menuToggled
         });
     }
+
     return (
         <React.Fragment>
             <nav className={s['navbar-ego'] + ' sticky-top bg-white'}>
@@ -37,7 +38,6 @@ function Navbar(){
         </React.Fragment>
     )
 }
-
 
 function Menu({show, handleToggle}){
     return (

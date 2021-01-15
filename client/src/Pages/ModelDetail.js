@@ -1,17 +1,16 @@
 import { useParams } from 'react-router-dom';
-import React, {useEffect, use} from 'react';
+import React, {useEffect} from 'react';
 import {Container} from 'react-bootstrap';
 import Model from '../Components/Model';
 import Carousel2 from '../Components/Carousel';
 import OtherDetails from '../Components/OtherDetails';
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getAllModels } from '../Store/actions/actions';
 
 function ModelDetail(){
     const { id } = useParams();
     
     const dispatch = useDispatch();
-
  
     useEffect(() => {
     dispatch(getAllModels())

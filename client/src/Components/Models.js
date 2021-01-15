@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAllModels, getOrder } from '../Store/actions/actions';
 
 
-
 function Models() {
 
     const dispatch = useDispatch();
@@ -16,7 +15,6 @@ function Models() {
     const models = useMemo(() => allmodels);
     const typeorder = useMemo(() => allsort.a);
     const wayorder = useMemo(() => allsort.b);
-
 
     const data = useMemo(() => {
         if (!models) {
@@ -39,10 +37,7 @@ function Models() {
             return models
         }  
         }
-
     },[getAllModels, typeorder, wayorder, models])
-
-
 
     useEffect(() => {
         dispatch(getOrder())

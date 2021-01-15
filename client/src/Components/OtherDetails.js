@@ -5,15 +5,15 @@ import { getAllOther } from '../Store/actions/actions';
 import { useSelector, useDispatch } from 'react-redux';
 
 
-function OtherDetails(id) {
+function OtherDetails() {
     
     const dispatch = useDispatch();
 
-    const detalles1 = useSelector((state) => state.allModels.details1);
-    const detalles2 = useSelector((state) => state.allModels.details2);
+    const detallesUno = useSelector((state) => state.allModels.details1);
+    const detallesDos = useSelector((state) => state.allModels.details2);
 
-    const memoizedValue = useMemo(() => detalles1);
-    const memoizedValue2 = useMemo(() => detalles2);
+    const detailsOne = useMemo(() => detallesUno);
+    const detailsTwo = useMemo(() => detallesDos);
 
   useEffect(()=>{
     (async function(){
@@ -31,9 +31,9 @@ function OtherDetails(id) {
     return (
         <div className={s['container']}>
             <div className={s['first']}>
-            {memoizedValue && memoizedValue.map((item) => {
+            {detailsOne && detailsOne.map((item) => {
             return    (
-(            <React.Fragment>
+            (<React.Fragment>
             <Col md={6}>
             <div className={s['details-container']}>
                 <h3 className={s['title']}>{item.description}</h3>
@@ -43,12 +43,12 @@ function OtherDetails(id) {
             <Col className="my-4" md={6}>
             <img src={item.img} className="img-fluid rounded" alt={'Imagen de ' + item.detail} />
             </Col>
-            </React.Fragment> )
-                )
+            </React.Fragment>)
+            )
             })} 
             </div>
             <div className={s['second']}>
-                        {memoizedValue2 && memoizedValue2.map((item) => {
+                        {detailsTwo && detailsTwo.map((item) => {
             return    (
                 (<React.Fragment>
             <Col className="my-4" md={6}>
@@ -61,8 +61,8 @@ function OtherDetails(id) {
             </div>
             </Col>
             </React.Fragment> )
-                            )
-                        })}
+            )
+            })}
             </div>    
         </div>
     );

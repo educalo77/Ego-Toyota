@@ -10,9 +10,9 @@ function Model() {
     const id = useParams();
     const dispatch = useDispatch();
 
-    const detalles1 = useSelector((state) => state.allModels.model);
+    const vehicle = useSelector((state) => state.allModels.model);
 
-    const model = useMemo(() => detalles1);
+    const model = useMemo(() => vehicle);
 
     useEffect(() => {
         dispatch(getOneModel(parseInt(id.id)));

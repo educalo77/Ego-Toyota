@@ -46,7 +46,6 @@ function Filters({ orderBy, orderDirection }) {
         }
     }
 
-
     const handleOrder = (a, b) => {
         return (e) => {
             e.preventDefault();
@@ -61,7 +60,6 @@ function Filters({ orderBy, orderDirection }) {
         dispatch(getAllSuvs())
         dispatch(getAllPickups())
         dispatch(getAllModels())
-
     }, [getAllAutos, getAllModels, getAllPickups, getAllSuvs])
 
     const vehicles = [{name: "Autos"}, {name: "Pickups y Comerciales"}, {name: "SUVs y Crossovers"}]
@@ -74,14 +72,12 @@ function Filters({ orderBy, orderDirection }) {
                         <img src="/models/img/fill-1.svg" alt="Flecha dropdown"
                              className={s['Fill-1'] + (state.dropdownToggledFilter ? ' ' + s['active'] : '')} />
                 </Dropdown.Toggle>
-
                 <Dropdown.Menu >
                     <Dropdown.Item
                         onClick={handleVehicles(null)}
                     >
                         Todos
                     </Dropdown.Item>
-
                     {vehicles.map((item,index) => (
                         <Dropdown.Item key={index}
                             onClick={handleVehicles(item.name)}
@@ -92,7 +88,6 @@ function Filters({ orderBy, orderDirection }) {
                     
                 </Dropdown.Menu>
             </Dropdown>
-
 
             <div className={s['desktop-filter']}>
                 <span className={s['filter-title']}>
@@ -115,7 +110,6 @@ function Filters({ orderBy, orderDirection }) {
                         <img src="/models/img/fill-1.svg" alt="Flecha dropdown"
                              className={s['Fill-1'] + (state.dropdownToggled ? ' ' + s['active'] : '')} />
                 </Dropdown.Toggle>
-
                 <Dropdown.Menu >
                     <Dropdown.Item
                         active={orderBy === 'id' && orderDirection === 'asc'}
