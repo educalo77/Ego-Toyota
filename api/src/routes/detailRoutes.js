@@ -13,12 +13,6 @@ router
       .then((detail) => res.json(detail).status(201))
       .catch((err) => res.status(400).json(err));
   })
-//   .get((req, res) => {
-//     getAll()
-//       .then((models) => res.json(models).status(200))
-//       .catch((err) => res.status(404).json(err))
-
-//   })
 
   router
     .route("/:id")

@@ -25,7 +25,6 @@ router
 
   })
 
-
   router
     .route("/:id")
     .get((req, res) => {
