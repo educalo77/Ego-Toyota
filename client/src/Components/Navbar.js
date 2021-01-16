@@ -25,8 +25,8 @@ function Navbar(){
                 </Link>
                 <Container className="mt-auto">
                     <ul>
-                        <li><NavLink activeClassName={s['active']} exact to="/models/">Modelos</NavLink></li>
-                        <li><NavLink activeClassName={s['active']} to="/modeldetail/" >Ficha de modelo</NavLink></li>
+                        <li><NavLink activeClassName={s['active']} exact to="/">Modelos</NavLink></li>
+                        <li><NavLink activeClassName={s['active']} to="/model/" >Ficha de modelo</NavLink></li>
                     </ul>
                 </Container>
                 <Link to="/" onClick={handleMenu} className={s['btn-menu']}>

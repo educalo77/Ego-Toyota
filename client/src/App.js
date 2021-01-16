@@ -13,8 +13,8 @@ function App() {
   return (
     <React.Fragment>
       <Navbar />
-      <Route exact path="/models/" component={Home} />
-      <Route exact path="/modeldetail/:id?" component={ModelDetail} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/model/:id?" component={ModelDetail} />
       <Footer />
     </React.Fragment>
   );
