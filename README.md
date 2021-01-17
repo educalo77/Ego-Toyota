@@ -4,11 +4,11 @@
 
 ## Instructions
 
-1- Clone the repo.
-2- Open api folder and install dependencies with the following command: npm install
-3- Do the same in client folder.
-4- Create a DB in postgres.
-5- Create a .env file inside api and inside client both in root directory.
+1- Clone the repo.&nbsp;
+2- Open api folder and install dependencies with the following command: npm install.&nbsp;
+3- Do the same in client folder.&nbsp;
+4- Create a DB in postgres.&nbsp;
+5- Create a .env file inside api and inside client both in root directory.&nbsp;
 6- .env in api must constain the following lines:
 
         PG_USER = <username_in_postgres>
