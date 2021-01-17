@@ -6,6 +6,7 @@ import Carousel2 from '../Components/Carousel';
 import OtherDetails from '../Components/OtherDetails';
 import { useDispatch } from "react-redux";
 import { getAllModels } from '../Store/actions/actions';
+import s from '../Styles/home.module.scss';
 
 function ModelDetail(){
     const { id } = useParams();
@@ -13,16 +14,32 @@ function ModelDetail(){
     const dispatch = useDispatch();
  
     useEffect(() => {
-    dispatch(getAllModels())
-    }, []);
+        dispatch(getAllModels())
+    }, [dispatch]);
+
+    window.scroll({
+    top: 0, 
+    left: 0, 
+    behavior: 'smooth'
+    })
 
     return (
         <React.Fragment>
-            <Container>
+            {id !== undefined ? 
+                (
+            <>
+            <Container >
                 <Model id={id} />
             </Container>
             <Carousel2 id={id} />
             <OtherDetails id={id} />
+            </>
+
+            ) :
+                (
+            <h1 className={s['page-title-detail']}>Elija un modelo</h1>
+            )
+                }
         </React.Fragment>
     )
 }

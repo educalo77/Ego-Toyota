@@ -27,7 +27,6 @@ function OtherDetails() {
     })()
   }, [])
     
-
     return (
         <div className={s['container']}>
             <div className={s['first']}>

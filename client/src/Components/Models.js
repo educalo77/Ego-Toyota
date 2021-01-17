@@ -17,9 +17,6 @@ function Models() {
     const wayorder = useMemo(() => allsort.b);
 
     const data = useMemo(() => {
-        if (!models) {
-            window.location.reload();
-        }
         if (models) {
         if (typeorder === 'price' && wayorder === 'asc') {
             return models.sort((a, b) => (a.price < b.price) ? -1 : 1)
@@ -37,19 +34,22 @@ function Models() {
             return models
         }  
         }
-    },[getAllModels, typeorder, wayorder, models])
+    },[typeorder, wayorder, models])
 
     useEffect(() => {
-        dispatch(getOrder())
-    }, []);
+        dispatch(getAllModels())
+    }, [getOrder]);
 
     return (
         <div>
-        <Row>
-            {models && models.map(item => (
+             {models && (models.length !== 0) ? 
+                (<Row>
+            {models.map(item => (
                 <ModelCard key={item.id} data={item} />
             ))}
-        </Row>
+        </Row>) : (
+            <h2>No hay modelos disponibles</h2>
+        )} 
         </div>
     )
 }
