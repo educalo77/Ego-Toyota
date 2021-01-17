@@ -1,6 +1,6 @@
 # Ego-Toyota
 
-Deployed client side with Vercel and Api side with Heroku. [https://ego-front.vercel.app/](https://ego-front.vercel.app/)
+Client side deployed with Vercel and Api side with Heroku. [https://ego-front.vercel.app/](https://ego-front.vercel.app/)
 
 # Getting Started with Ego-Toyota
 
