@@ -32,6 +32,27 @@ Client side deployed with Vercel and Api side with Heroku. [https://ego-front.ve
 
 9- npm start in api folder (if your applying a local DB with postgres) and npm start inside client folder. The project will launch in [http://localhost:3001](http://localhost:3001).
 
+## Used Technologies
+
+- Front End:
+
+HTML - CSS - Javascript
+React
+Bootstrap
+React-Bootstrap
+Redux
+
+- Back End:
+
+Node.js
+Express
+Passport
+Sequelize
+
+- Database:
+
+PostgreSQL
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
