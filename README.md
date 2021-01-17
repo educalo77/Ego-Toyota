@@ -28,6 +28,8 @@
 
 8- you may use REACT_APP_API = [https://egotoyota.herokuapp.com/](https://egotoyota.herokuapp.com/) and avoid steps incluiding api folder and creating DB with postgres.
 
+9- npm start in api folder (if your applying a local DB with postgres) and npm start inside client folder. The project will launch in [http://localhost:3001](http://localhost:3001).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
