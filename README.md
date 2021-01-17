@@ -1,6 +1,27 @@
 # Ego-Toyota
 
-# Getting Started with Create React App
+# Getting Started with Ego-Toyota
+
+## Instructions
+
+1- Clone the repo.
+2- Open api folder and install dependencies with the following command: npm install
+3- Do the same in client folder.
+4- Create a DB in postgres.
+5- Create a .env file inside api and inside client both in root directory.
+6- .env in api must constain the following lines:
+
+        PG_USER = <username_in_postgres>
+        PG_PASSWORD = <your_postgres_password>
+        PG_HOST = localhost
+        PG_PORT = 5432
+        PG_DATABASE = <name of the db you created in postgres>
+
+7- .env in client must contain the following line:
+
+        REACT_APP_API = http://localhost:3001
+
+8- you may use REACT_APP_API = [https://egotoyota.herokuapp.com/](https://egotoyota.herokuapp.com/) and avoid steps incluiding api folder and creating DB with postgres.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
